@@ -1,0 +1,23 @@
+.sidebar {
+  margin-left: 16px;
+}
+
+.button {
+  width: 40px;
+  height: 24px;
+  margin-right: 8px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+@media screen and (min-width: 768px) {
+  .sidebar {
+    margin-left: 20px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .sidebar {
+    margin-left: 26px;
+  }
+}

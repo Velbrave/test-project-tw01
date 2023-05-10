@@ -1,0 +1,39 @@
+.label {
+  display: flex;
+  align-items: center;
+  margin-right: 16px;
+}
+
+.input {
+  width: 144px;
+  height: 26px;
+  padding-left: 30px;
+}
+
+@media screen and (min-width: 468px) {
+  .input {
+    width: 184px;
+    height: 28px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .label {
+    margin-right: 20px;
+  }
+
+  .input {
+    width: 220px;
+    height: 30px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .label {
+    margin-right: 26px;
+  }
+
+  .input {
+    width: 250px;
+  }
+}
