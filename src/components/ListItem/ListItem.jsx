@@ -1,26 +1,43 @@
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { deleteLists } from '../../redux/listsSlice';
+import React, { useEffect, useState } from 'react';
+// import { useDispatch } from 'react-redux';
+import { db } from '../../firebase/config';
+import { collection, doc, onSnapshot } from 'firebase/firestore';
 import css from './ListItem.module.css';
-import { RiDeleteBin6Line } from 'react-icons/ri';
+import DeleteItem from '../DeleteItem/DeleteItem';
 
 const ListItem = () => {
-  const todos = useSelector(state => state.lists.lists);
-  const dispatch = useDispatch();
-  console.log(todos);
+  const [posts, setPosts] = useState([]);
+  // const filter = useSelector(state => state.filter);
+  // const todos = useSelector(state => state.lists.lists);
+  // const dispatch = useDispatch();
+
+  const getAllPost = async () => {
+    try {
+      await onSnapshot(collection(db, 'todos'), data =>
+        setPosts(data.docs.map(doc => ({ ...doc.data(), id: doc.id })))
+      );
+    } catch (error) {
+      console.error('Error document: ', error);
+    }
+  };
+
+  useEffect(() => {
+    getAllPost();
+  }, []);
+
+  // const filteredTodos = posts.filter(post =>
+  //   post.text[0].toLowerCase().includes(filter.toLowerCase())
+  // );
+
   return (
     <ul className={css.todoList}>
-      {todos.map(({ id, text }) => {
+      {posts.map(({ id, text, listId }) => {
         return (
           <li className={css.item} key={id}>
-            <p>{text}</p>
-            <p className={css.id}>{id}</p>
-            <button
-              className={css.button}
-              onClick={() => dispatch(deleteLists(id))}
-            >
-              <RiDeleteBin6Line />
-            </button>
+            <p className={css.textItem}>{text}</p>
+            <p className={css.id}>{listId}</p>
+
+            <DeleteItem id={id} />
           </li>
         );
       })}

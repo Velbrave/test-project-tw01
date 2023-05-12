@@ -10,6 +10,7 @@ export const listsSlice = createSlice({
   reducers: {
     addLists: (state, action) => {
       state.lists.push(action.payload);
+      console.log(state.lists);
     },
     deleteLists: (state, action) => {
       state.lists = state.lists.filter(list => list.id !== action.payload);
@@ -17,5 +18,5 @@ export const listsSlice = createSlice({
   },
 });
 
-export const { addLists, deleteLists } = listsSlice.actions;
+export const { addLists, deleteLists, filteredLists } = listsSlice.actions;
 export const listsReducer = listsSlice.reducer;

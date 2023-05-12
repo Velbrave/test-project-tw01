@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addLists } from '../../redux/listsSlice';
+import TodoItem from '../TodoItem/TodoItem';
 import css from './WorkSpace.module.css';
-import { SlNote } from 'react-icons/sl';
+import { GoPlus } from 'react-icons/go';
+import { db } from '../../firebase/config';
+import { collection, addDoc } from 'firebase/firestore';
 
 const WorkSpace = () => {
   const [text, setText] = useState('');
@@ -12,7 +15,7 @@ const WorkSpace = () => {
     setText(event.target.value);
   };
 
-  const handleSubmit = event => {
+  const handleSubmit = async event => {
     event.preventDefault();
     const todoId = new Date().toLocaleString('en-US', {
       day: 'numeric',
@@ -23,9 +26,22 @@ const WorkSpace = () => {
       minute: 'numeric',
       second: 'numeric',
     });
+
     const formData = { id: todoId, text };
+
     dispatch(addLists(formData));
+
     setText('');
+
+    try {
+      const docRef = await addDoc(collection(db, 'todos'), {
+        listId: todoId,
+        text: text,
+      });
+      console.log('Document written with ID: ', docRef.id);
+    } catch (e) {
+      console.error('Error adding document: ', e);
+    }
   };
 
   return (
@@ -37,9 +53,10 @@ const WorkSpace = () => {
           onChange={handleChange}
         ></textarea>
         <button className={css.button} type="submit">
-          <SlNote />
+          <GoPlus />
         </button>
       </label>
+      {/* <TodoItem /> */}
     </form>
   );
 };
