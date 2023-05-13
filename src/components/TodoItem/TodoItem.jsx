@@ -1,45 +1,63 @@
 import React, { useEffect, useState } from 'react';
-// import { useDispatch } from 'react-redux';
-// import { deleteLists } from '../../redux/listsSlice';
-// import css from './TodoItem.module.css';
-// import { RiDeleteBin6Line } from 'react-icons/ri';
-// import { db } from '../../firebase/config';
-// import { collection, doc, onSnapshot } from 'firebase/firestore';
+import { useParams } from 'react-router-dom';
+import { SlNote } from 'react-icons/sl';
+import css from './TodoItem.module.css';
+import { db } from '../../firebase/config';
+import { doc, getDoc, updateDoc } from 'firebase/firestore';
 
-const TodoItem = ({ id, text }) => {
-  // const [post, setPosts] = useState([]);
-  // const dispatch = useDispatch();
+const TodoItem = () => {
+  const [text, setText] = useState('');
+  const [todoId, setTodoId] = useState('');
+  const { id } = useParams();
 
-  // const getAllPost = async () => {
-  //   await onSnapshot(collection(db, 'todos'), data =>
-  //     setPosts(data.docs.map(doc => ({ ...doc.data(), id: doc.id })))
-  //   );
-  // };
+  const docRef = doc(db, 'todos', id);
 
-  // useEffect(() => {
-  //   getAllPost();
-  // }, []);
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const docSnap = await getDoc(doc(db, 'todos', id));
+        setText(docSnap.data().text);
+        setTodoId(docSnap.data().listId);
+      } catch (error) {
+        console.error('Select todo!', error.message);
+      }
+    }
+    fetchData();
+  }, [id]);
 
-  // console.log('post', post);
+  const handleChange = event => {
+    setText(event.target.value);
+  };
+
+  const UpdateTodo = async () => {
+    try {
+      await updateDoc(docRef, {
+        text: text,
+      });
+    } catch (error) {
+      console.error('This todo does not exist!', error.message);
+    }
+  };
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    UpdateTodo();
+  };
 
   return (
-    <ul>
-      <h2>TODO</h2>
-      {/* {post.map(({ id, text }) => {
-        return (
-          <li className={css.item} key={id}>
-            <p className={css.id}>{id}</p>
-            <p className={css.textItem}>{text}</p>
-            <button
-              className={css.button}
-              onClick={() => dispatch(deleteLists(id))}
-            >
-              <RiDeleteBin6Line />
-            </button>
-          </li>
-        );
-      })} */}
-    </ul>
+    <form className={css.form} onSubmit={handleSubmit}>
+      <label className={css.label} htmlFor="">
+        <p className={css.todoId}>{todoId}</p>
+        <textarea
+          className={css.input}
+          value={text}
+          onChange={handleChange}
+        ></textarea>
+        <button className={css.button} type="submit">
+          <SlNote />
+        </button>
+      </label>
+    </form>
   );
 };
 

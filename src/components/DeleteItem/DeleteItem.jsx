@@ -13,7 +13,7 @@ const DeleteItem = ({ id }) => {
     }
   };
   return (
-    <div>
+    <div className={css.delBtn}>
       <button className={css.button} onClick={handleDelete}>
         <RiDeleteBin6Line />
       </button>

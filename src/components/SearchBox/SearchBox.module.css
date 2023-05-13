@@ -5,15 +5,15 @@
 }
 
 .input {
-  width: 144px;
-  height: 26px;
+  width: 150px;
+  height: 28px;
   padding-left: 30px;
 }
 
 @media screen and (min-width: 468px) {
   .input {
-    width: 184px;
-    height: 28px;
+    width: 200px;
+    height: 30px;
   }
 }
 
@@ -23,8 +23,8 @@
   }
 
   .input {
-    width: 220px;
-    height: 30px;
+    width: 250px;
+    height: 34px;
   }
 }
 
@@ -34,6 +34,7 @@
   }
 
   .input {
-    width: 250px;
+    width: 300px;
+    height: 38px;
   }
 }

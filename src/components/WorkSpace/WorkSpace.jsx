@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addLists } from '../../redux/listsSlice';
-import TodoItem from '../TodoItem/TodoItem';
 import css from './WorkSpace.module.css';
 import { GoPlus } from 'react-icons/go';
 import { db } from '../../firebase/config';
@@ -56,7 +55,6 @@ const WorkSpace = () => {
           <GoPlus />
         </button>
       </label>
-      {/* <TodoItem /> */}
     </form>
   );
 };
