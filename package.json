@@ -1,8 +1,6 @@
 {
   "name": "react-test-project",
   "version": "0.1.0",
-  "description": "",
-  "homepage": "https://github.com/Velbrave/test-project-tw01",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
