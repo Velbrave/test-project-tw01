@@ -5,34 +5,55 @@
 }
 
 .item {
-  padding: 15px;
-  padding-bottom: 5px;
+  height: 50px;
+  padding: 5px 10px;
   border-right: 1px solid #a9a9a9;
   border-bottom: 1px solid #a9a9a9;
+  overflow: hidden;
 }
 
 .textItem {
   font-family: 'Consolas';
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 14px;
   line-height: 1.02;
   margin-bottom: 5px;
+  color: #212121;
 }
 
 .id {
-  font-size: 11px;
-  margin-bottom: 5px;
+  font-size: 7px;
+  color: #212121;
 }
 
-.button {
-  width: 36px;
-  height: 24px;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  margin-right: 12px;
-}
+@media screen and (min-width: 768px) {
+  .item {
+    height: 70px;
+    padding: 8px 16px;
+  }
 
-.blockBtn {
-  display: flex;
+  .textItem {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .id {
+    font-size: 12px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .item {
+    height: 90px;
+    padding: 10px 20px;
+  }
+
+  .textItem {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .id {
+    font-size: 12px;
+  }
 }

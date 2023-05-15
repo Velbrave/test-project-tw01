@@ -52,7 +52,7 @@ const WorkSpace = () => {
           onChange={handleChange}
         ></textarea>
         <button className={css.button} type="submit">
-          <GoPlus />
+          <GoPlus className={css.plus} />
         </button>
       </label>
     </form>

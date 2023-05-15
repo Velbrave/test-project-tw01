@@ -4,11 +4,15 @@ import { SlNote } from 'react-icons/sl';
 import css from './TodoItem.module.css';
 import { db } from '../../firebase/config';
 import { doc, getDoc, updateDoc } from 'firebase/firestore';
+import ModalDelete from '../DeleteItem/ModalDelete';
+import { useToggle } from '../../Hooks/UseToggle';
+import { RiDeleteBin6Line } from 'react-icons/ri';
 
 const TodoItem = () => {
   const [text, setText] = useState('');
   const [todoId, setTodoId] = useState('');
   const { id } = useParams();
+  const { isOpen, open, toggle } = useToggle();
 
   const docRef = doc(db, 'todos', id);
 
@@ -45,19 +49,27 @@ const TodoItem = () => {
   };
 
   return (
-    <form className={css.form} onSubmit={handleSubmit}>
-      <label className={css.label} htmlFor="">
-        <p className={css.todoId}>{todoId}</p>
-        <textarea
-          className={css.input}
-          value={text}
-          onChange={handleChange}
-        ></textarea>
-        <button className={css.button} type="submit">
-          <SlNote />
-        </button>
-      </label>
-    </form>
+    <>
+      <form className={css.form} onSubmit={handleSubmit}>
+        <label className={css.label} htmlFor="">
+          <p className={css.todoId}>{todoId}</p>
+          <textarea
+            className={css.input}
+            value={text}
+            onChange={handleChange}
+          ></textarea>
+          <button className={css.deleteButton} onClick={open}>
+            <RiDeleteBin6Line className={css.delete} />
+          </button>
+          <button className={css.updateButton} type="submit">
+            <SlNote className={css.note} />
+          </button>
+        </label>
+      </form>
+      {isOpen && (
+        <ModalDelete text={text} closeModal={toggle} setText={setText} />
+      )}
+    </>
   );
 };
 

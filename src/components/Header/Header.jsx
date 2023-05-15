@@ -11,12 +11,12 @@ const Header = () => {
       <nav className={css.sidebar}>
         <Link to="/">
           <button className={css.button}>
-            <GoPlus />
+            <GoPlus className={css.plus} />
           </button>
         </Link>
         <Link to="/update/:id">
           <button className={css.button}>
-            <SlNote />
+            <SlNote className={css.note} />
           </button>
         </Link>
       </nav>

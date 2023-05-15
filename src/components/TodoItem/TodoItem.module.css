@@ -10,25 +10,140 @@
   height: 100vh;
   resize: none;
   border: none;
-  padding: 30px;
+  padding: 10px;
   font-family: 'Consolas';
   font-style: normal;
   font-weight: 400;
-  font-size: 32px;
+  font-size: 16px;
   line-height: 1.19;
 }
 
-.button {
-  width: 36px;
-  height: 24px;
+.updateButton {
+  width: 34px;
+  height: 22px;
   position: absolute;
   top: 65px;
   right: 12px;
-  padding-top: 3px;
-  padding-bottom: 3px;
+  border-radius: 8px;
+  border: none;
+  background-color: #1e90ff;
+  cursor: pointer;
+}
+
+.updateButton:hover {
+  background: linear-gradient(to right, #0f3443, #1e90ff);
+  cursor: pointer;
+}
+
+.note {
+  fill: #ffffff;
+  width: 16px;
+  height: 16px;
+}
+
+.deleteButton {
+  width: 34px;
+  height: 22px;
+  position: absolute;
+  top: 65px;
+  right: 65px;
+  border-radius: 8px;
+  border: none;
+  background-color: #1e90ff;
+  cursor: pointer;
+}
+
+.deleteButton:hover {
+  background: linear-gradient(to right, #0f3443, #1e90ff);
+  cursor: pointer;
+}
+
+.delete {
+  fill: #ffffff;
+  width: 16px;
+  height: 16px;
 }
 
 .todoId {
-  margin-top: 14px;
-  margin-left: 12px;
+  font-size: 13px;
+  margin-top: 32px;
+  margin-left: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .input {
+    padding: 16px;
+    font-size: 22px;
+  }
+
+  .todoId {
+    font-size: 14px;
+    margin-top: 34px;
+    margin-left: 16px;
+  }
+
+  .updateButton {
+    width: 38px;
+    height: 26px;
+    top: 65px;
+    right: 16px;
+    border-radius: 8px;
+  }
+
+  .note {
+    width: 18px;
+    height: 18px;
+  }
+
+  .deleteButton {
+    width: 38px;
+    height: 26px;
+    top: 65px;
+    right: 70px;
+    border-radius: 8px;
+  }
+
+  .delete {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .input {
+    padding: 20px;
+    font-size: 28px;
+  }
+
+  .todoId {
+    font-size: 18px;
+    margin-top: 36px;
+    margin-left: 20px;
+  }
+
+  .updateButton {
+    width: 42px;
+    height: 28px;
+    top: 65px;
+    right: 20px;
+    border-radius: 8px;
+  }
+
+  .note {
+    width: 20px;
+    height: 20px;
+  }
+
+  .deleteButton {
+    width: 42px;
+    height: 28px;
+    top: 65px;
+    right: 85px;
+    border-radius: 8px;
+  }
+
+  .delete {
+    width: 20px;
+    height: 20px;
+  }
 }
