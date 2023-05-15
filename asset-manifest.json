@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/Velbrave/test-project-tw01/static/css/main.789f71e1.css",
-    "main.js": "/Velbrave/test-project-tw01/static/js/main.78c40604.js",
-    "index.html": "/Velbrave/test-project-tw01/index.html",
-    "static/media/Vector.svg": "/Velbrave/test-project-tw01/static/media/Vector.cc1ceba07e91f7b10ddd.svg",
-    "main.789f71e1.css.map": "/Velbrave/test-project-tw01/static/css/main.789f71e1.css.map",
-    "main.78c40604.js.map": "/Velbrave/test-project-tw01/static/js/main.78c40604.js.map"
+    "main.css": "/static/css/main.a02bc635.css",
+    "main.js": "/static/js/main.64d4404e.js",
+    "index.html": "/index.html",
+    "static/media/Vector.svg": "/static/media/Vector.cc1ceba07e91f7b10ddd.svg",
+    "main.a02bc635.css.map": "/static/css/main.a02bc635.css.map",
+    "main.64d4404e.js.map": "/static/js/main.64d4404e.js.map"
   },
   "entrypoints": [
-    "static/css/main.789f71e1.css",
-    "static/js/main.78c40604.js"
+    "static/css/main.a02bc635.css",
+    "static/js/main.64d4404e.js"
   ]
 }
