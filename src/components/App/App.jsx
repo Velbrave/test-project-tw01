@@ -1,19 +1,18 @@
 import { Routes, Route } from 'react-router-dom';
 import HomePage from '../../page/HomePage/HomePage';
-import Header from '../Header/Header';
 import UpdatePage from '../../page/UpdatePage/UpdatePage';
 import NotFound from '../NotFound/NotFound';
+import { Layout } from '../Layout/Layout';
 
 function App() {
   return (
-    <>
-      <Header />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/update/:id" element={<UpdatePage />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<HomePage />} />
+        <Route path="update/:id" element={<UpdatePage />} />
+      </Route>
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   );
 }
 

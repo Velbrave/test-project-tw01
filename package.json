@@ -2,7 +2,7 @@
   "name": "react-test-project",
   "version": "0.1.0",
   "description": "",
-  "homepage": "https://github.com/Velbrave/test-project-tw01",
+  "homepage": "https://github.com/test-project-tw01",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.16.5",
