@@ -37,7 +37,15 @@ const ListItem = () => {
     );
   });
 
-  return <ul className={css.todoList}>{ListItem}</ul>;
+  return (
+    <ul className={css.todoList}>
+      {ListItem?.length ? (
+        ListItem
+      ) : (
+        <p className={css.notes}>There are no notes here yet. Please add.</p>
+      )}
+    </ul>
+  );
 };
 
 export default ListItem;

@@ -67,7 +67,12 @@ const TodoItem = () => {
         </label>
       </form>
       {isOpen && (
-        <ModalDelete text={text} closeModal={toggle} setText={setText} />
+        <ModalDelete
+          text={text}
+          closeModal={toggle}
+          setText={setText}
+          setTodoId={setTodoId}
+        />
       )}
     </>
   );

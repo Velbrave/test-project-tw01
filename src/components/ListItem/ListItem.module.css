@@ -27,6 +27,19 @@
   color: #212121;
 }
 
+.notes {
+  font-family: 'Consolas';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.3;
+  margin-top: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+  color: #212121;
+}
+
 @media screen and (min-width: 768px) {
   .item {
     height: 70px;
@@ -41,7 +54,12 @@
   .itemId {
     font-size: 12px;
   }
+
+  .notes {
+    font-size: 20px;
+  }
 }
+
 @media screen and (min-width: 1280px) {
   .item {
     height: 90px;
@@ -55,5 +73,10 @@
 
   .itemId {
     font-size: 12px;
+  }
+
+  .notes {
+    font-size: 28px;
+    margin-top: 70px;
   }
 }

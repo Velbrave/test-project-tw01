@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { db } from '../../firebase/config';
 import { doc, deleteDoc } from 'firebase/firestore';
 import { MdClose } from 'react-icons/md';
@@ -8,8 +8,10 @@ import css from './ModalDelete.module.css';
 
 const modalRoot = document.querySelector('#modal-root');
 
-const ModalDelete = ({ closeModal, text, setText }) => {
+const ModalDelete = ({ closeModal, text, setText, setTodoId }) => {
   const { id } = useParams();
+  const navigate = useNavigate();
+
   const handleDelete = async () => {
     try {
       await deleteDoc(doc(db, 'todos', id));
@@ -18,6 +20,8 @@ const ModalDelete = ({ closeModal, text, setText }) => {
     }
     closeModal();
     setText('');
+    setTodoId('');
+    navigate('/', { replace: true });
   };
 
   useEffect(() => {
