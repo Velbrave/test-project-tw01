@@ -26,20 +26,18 @@ const ListItem = () => {
     post.text.toLowerCase().includes(filter.toLowerCase())
   );
 
-  return (
-    <ul className={css.todoList}>
-      {filteredTodos.map(({ id, text, listId }) => {
-        return (
-          <Link to={`/update/${id}`}>
-            <li className={css.item} key={id}>
-              <p className={css.textItem}>{text}</p>
-              <p className={css.id}>{listId}</p>
-            </li>
-          </Link>
-        );
-      })}
-    </ul>
-  );
+  const ListItem = filteredTodos.map(({ id, text, listId }) => {
+    return (
+      <Link to={`/update/${id}`}>
+        <li className={css.item} key={id}>
+          <p className={css.textItem}>{text}</p>
+          <p className={css.itemId}>{listId}</p>
+        </li>
+      </Link>
+    );
+  });
+
+  return <ul className={css.todoList}>{ListItem}</ul>;
 };
 
 export default ListItem;
