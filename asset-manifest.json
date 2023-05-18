@@ -1,14 +1,26 @@
 {
   "files": {
-    "main.css": "/test-project-tw01/static/css/main.028ac105.css",
-    "main.js": "/test-project-tw01/static/js/main.2a5440e1.js",
+    "main.css": "/test-project-tw01/static/css/main.2b9df57e.css",
+    "main.js": "/test-project-tw01/static/js/main.692c80fc.js",
+    "static/css/258.bce560e3.chunk.css": "/test-project-tw01/static/css/258.bce560e3.chunk.css",
+    "static/js/258.f773167d.chunk.js": "/test-project-tw01/static/js/258.f773167d.chunk.js",
+    "static/css/699.bcd18298.chunk.css": "/test-project-tw01/static/css/699.bcd18298.chunk.css",
+    "static/js/699.59d68a02.chunk.js": "/test-project-tw01/static/js/699.59d68a02.chunk.js",
+    "static/js/336.0cbfba88.chunk.js": "/test-project-tw01/static/js/336.0cbfba88.chunk.js",
+    "static/js/615.598a20ff.chunk.js": "/test-project-tw01/static/js/615.598a20ff.chunk.js",
     "index.html": "/test-project-tw01/index.html",
     "static/media/Vector.svg": "/test-project-tw01/static/media/Vector.cc1ceba07e91f7b10ddd.svg",
-    "main.028ac105.css.map": "/test-project-tw01/static/css/main.028ac105.css.map",
-    "main.2a5440e1.js.map": "/test-project-tw01/static/js/main.2a5440e1.js.map"
+    "main.2b9df57e.css.map": "/test-project-tw01/static/css/main.2b9df57e.css.map",
+    "main.692c80fc.js.map": "/test-project-tw01/static/js/main.692c80fc.js.map",
+    "258.bce560e3.chunk.css.map": "/test-project-tw01/static/css/258.bce560e3.chunk.css.map",
+    "258.f773167d.chunk.js.map": "/test-project-tw01/static/js/258.f773167d.chunk.js.map",
+    "699.bcd18298.chunk.css.map": "/test-project-tw01/static/css/699.bcd18298.chunk.css.map",
+    "699.59d68a02.chunk.js.map": "/test-project-tw01/static/js/699.59d68a02.chunk.js.map",
+    "336.0cbfba88.chunk.js.map": "/test-project-tw01/static/js/336.0cbfba88.chunk.js.map",
+    "615.598a20ff.chunk.js.map": "/test-project-tw01/static/js/615.598a20ff.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.028ac105.css",
-    "static/js/main.2a5440e1.js"
+    "static/css/main.2b9df57e.css",
+    "static/js/main.692c80fc.js"
   ]
 }
